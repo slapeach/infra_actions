@@ -72,6 +72,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }} # Если ssh-ключ защищён фразой-паролем
           script: |
-            sudo docker pull alzania/infra_project
+            sudo docker pull alzania/infra_project:v1.7.2022
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 alzania/infra_project
+            sudo docker run --rm -d -p 5000:5000 alzania/infra_project:v1.7.2022
